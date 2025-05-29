@@ -2,125 +2,7 @@
 <html lang="en">
   <head>
     <title>"pot's room"</title>
-    
-<style>
-body { 
-  background: #FFFFFF;
-  background: radial-gradient(circle,rgba(255, 255, 255, 1) 15%, rgba(252, 157, 195, 1) 63%, rgba(148, 205, 233, 1) 81%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h1 {
-  text-align: center;
-  font-size: 96px;
-  color: white;
-  text-shadow: 
-        1px 1px 0px black, 
-        -1px -1px 0px black,
-        1px -1px 0px black,
-        -1px 1px 0px black;
-}
-
-input {
-  width: 950px;
-  text-align: center;
-  font-size: 36px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  background-color: #00000020;
-  backdrop-filter: blur(10px);
-
-  border: 2px;
-  border-radius: 4px;
-}
-
-ul {
-  list-style-type: none;
-  background-color: #00000030;
-  backdrop-filter: blur(10px);
-
-  border: 2px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 4px;
-  font-size: 48px;
-  padding: 20px;
-
-  display: grid;
-  grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 80px 80px;
-    grid-template-areas:
-      "col1-item1 col2-item1 col3-item1"
-      "col1-item2 col2-item2 col3-item2"
-      "col1-item3 col2-item3 col3-item3"
-}
-    /* Column 1 */
-.col1-item1 { grid-area: col1-item1; }
-.col1-item2 { grid-area: col1-item2; }
-.col1-item3 { grid-area: col1-item3; }
-    /* Column 2 */
-.col2-item1 { grid-area: col2-item1; }
-.col2-item2 { grid-area: col2-item2; }
-.col2-item3 { grid-area: col2-item3; }
-    /* Column 3 */
-.col3-item1 { grid-area: col3-item1; }
-.col3-item2 { grid-area: col3-item2; }
-.col3-item3 { grid-area: col3-item3; }
-
-
-ul li a{
-  text-decoration: none;
-  transition: font-size 0.3s ease;
-}
-ul li:hover a{
-    font-size: 64px;
-}
-
-a.yt:link, a.yt:visited {
-  color: red;
-}
-
-a.rd:link, a.rd:visited {
-  color: orange;
-}
-
-a.wa:link, a.wa:visited {
-  color: darkgreen;
-}
-
-a.dc:link, a.dc:visited {
-  color: cornflowerblue;
-}
-
-a.cf:link, a.cf:visited {
-  color: darkgray;
-}
-
-a.cs:link, a.cs:visited {
-  color: darkgrey
-}
-
-a.gh:link, a.gh:visited {
-  color: black;
-}
-
-a.im:link, a.im:visited {
-  color: green;
-}
-
-a.al:link, a.al:visited {
-  color: deepskyblue;
-}
-</style>
+    <link rel="stylesheet" href="styles.css">
 
     <meta charset="UTF-8">
     <meta name="keywords" content="personal, p0ta70">
@@ -129,38 +11,15 @@ a.al:link, a.al:visited {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1 id="date">Loading date...</h1>
-    <script>
-      setInterval(
-        function () {
-          const date = new Date();
-          let hour = date.getHours();
-          let min = date.getMinutes();
-          let second = date.getSeconds();
-          hour = hour < 10 ? "0" + hour : hour;
-          min = min < 10 ? "0" + min : min;
-          second = second < 10 ? "0" + second : second;
-          document.getElementById('date').innerHTML = hour + ":" + min + ":" + second
-        }, 1000
-      )
-    </script>
+    <h1 id="date">Loading time...</h1>
+    <script src="time.js"></script>
     
     <!-- below script stolen from https://codepen.io/daveredfern/pen/OJMoEOb -->
     <form action ="https://duckduckgo.com/" method="POST" target="_blank" class="inline-form" novalidate>
       <input autofocus type="search" name="q" placeholder= "Search DDG">
     </form>
 
-    <script>
-      var searchForm = document.querySelector('form[action="https://duckduckgo.com/"]');
-	    var searchField = searchForm.querySelector('[name="q"]');
-	    searchField.value = '';
-	    searchForm.addEventListener('submit', function(e) {
-		    e.preventDefault();
-		    var url = `${searchForm.action}?q=${encodeURI(searchField.value)}`;
-		    window.open(url, '_blank');
-		    win.focus();
-	    });
-    </script>
+    <script src="ddg.js"></script>
     
     <!-- https://stackoverflow.com/questions/14885026/how-to-lay-out-list-items-like-a-grid-with-css-and-html -->
     <ul>
